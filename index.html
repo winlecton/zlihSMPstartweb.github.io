@@ -1,1 +1,229 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>ZLIH SMP - Control Panel</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-icon">⛏</span>
+            <span>ZLIH SMP</span>
+        </div>
+
+        <div class="topbar-right">
+            <span id="connectionStatus" class="connection offline">
+                ● OFFLINE
+            </span>
+
+            <button id="logoutButton" class="logout-button">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <div>
+                <h1>Server Dashboard</h1>
+                <p>Manage your Minecraft network.</p>
+            </div>
+
+            <div class="version">
+                Minecraft <strong>26.1.2</strong>
+            </div>
+        </section>
+
+        <!-- SERVER STATUS -->
+
+        <section class="cards">
+
+            <div class="card status-card">
+                <div class="card-title">
+                    <span>SERVER STATUS</span>
+                    <span id="statusDot" class="status-dot offline-dot"></span>
+                </div>
+
+                <div id="serverStatus" class="big-status">
+                    OFFLINE
+                </div>
+
+                <p id="statusDescription">
+                    The Minecraft network is currently offline.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    PLAYERS
+                </div>
+
+                <div id="playerCount" class="big-number">
+                    0
+                </div>
+
+                <p>players online</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    RAM USAGE
+                </div>
+
+                <div id="ramUsage" class="big-number">
+                    0 GB
+                </div>
+
+                <p id="ramLimit">of 8 GB</p>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    SERVER VERSION
+                </div>
+
+                <div class="big-number version-number">
+                    26.1.2
+                </div>
+
+                <p>Paper + Velocity</p>
+            </div>
+
+        </section>
+
+        <!-- SERVER CONTROLS -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Server Controls</h2>
+            </div>
+
+            <div class="control-buttons">
+
+                <button id="startButton" class="control-button start">
+                    ▶ START
+                </button>
+
+                <button id="restartButton" class="control-button restart">
+                    ↻ RESTART
+                </button>
+
+                <button id="stopButton" class="control-button stop">
+                    ■ STOP
+                </button>
+
+            </div>
+
+            <p id="actionMessage" class="action-message">
+                Ready.
+            </p>
+
+        </section>
+
+        <!-- CONSOLE -->
+
+        <section class="panel">
+
+            <div class="panel-header console-header">
+                <h2>Console</h2>
+
+                <button id="clearConsole" class="small-button">
+                    Clear
+                </button>
+            </div>
+
+            <div id="console" class="console">
+                <div>[Dashboard] Control panel loaded.</div>
+                <div>[Dashboard] Waiting for Control API...</div>
+                <div>[Server] Status: OFFLINE</div>
+            </div>
+
+            <div class="command-row">
+
+                <input
+                    id="commandInput"
+                    type="text"
+                    placeholder="Enter server command..."
+                >
+
+                <button id="sendCommand" class="send-button">
+                    SEND
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- SETTINGS -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+                <h2>Server Settings</h2>
+            </div>
+
+            <div class="settings-grid">
+
+                <label>
+                    Server MOTD
+                    <input
+                        id="motd"
+                        type="text"
+                        value="ZLIH SMP"
+                    >
+                </label>
+
+                <label>
+                    Difficulty
+                    <select id="difficulty">
+                        <option>Peaceful</option>
+                        <option>Easy</option>
+                        <option selected>Normal</option>
+                        <option>Hard</option>
+                    </select>
+                </label>
+
+                <label>
+                    Max Players
+                    <input
+                        id="maxPlayers"
+                        type="number"
+                        value="20"
+                        min="1"
+                        max="100"
+                    >
+                </label>
+
+                <label class="checkbox-label">
+                    <input id="whitelist" type="checkbox">
+                    Whitelist enabled
+                </label>
+
+            </div>
+
+            <button id="saveSettings" class="save-button">
+                SAVE SETTINGS
+            </button>
+
+        </section>
+
+        <footer>
+            ZLIH SMP Control Panel • Minecraft 26.1.2
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
+```
